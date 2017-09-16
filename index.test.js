@@ -5,7 +5,7 @@ const TEST_SUFFIX = 'TEST_SUFFIX'
 const stackKey = 'items'
 
 const {
-   pushByKey,
+   push,
    pop,
    popToKey,
    popToIndex,
@@ -39,8 +39,8 @@ describe('stackReducer', ()=>{
       })
    }
 
-   it('should pushByKey to stack', () => {
-      const action = pushByKey('D', {title:'Title D'})
+   it('should push to stack', () => {
+      const action = push('D', {title:'Title D'})
       const actualState = reducer(stateBefore(), action).toJS()
       const expectedState = {
          items:[{

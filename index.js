@@ -8,9 +8,9 @@ const partialApply = (...leftArgs) =>
          fn.apply(this, [...leftArgs, ...rightArgs])
 
 
-export const PUSH_BY_KEY = 'PUSH_BY_KEY'
-export const pushByKey = (suffix, key, payload) => ({
-   type: `${PUSH_BY_KEY}_${suffix}`,
+export const PUSH = 'PUSH'
+export const push = (suffix, key, payload) => ({
+   type: `${PUSH}_${suffix}`,
    key,
    payload
 })
@@ -51,7 +51,7 @@ export const initializeStack = (suffix, stackKey) => {
    const partialSuffix = partialApply(suffix)
 
    return {
-      pushByKey: partialSuffix(pushByKey),
+      push: partialSuffix(push),
       pop: partialSuffix(pop),
       popToKey: partialSuffix(popToKey),
       popToIndex: partialSuffix(popToIndex),
@@ -77,7 +77,7 @@ const createStackReducer = (suffix = '', stackKey = defaultStackKey) => {
       return (state = fromJS(initialState), action) => {
 
          switch (action.type) {
-            case `${PUSH_BY_KEY}_${suffix}` :
+            case `${PUSH}_${suffix}` :
                const hasItem = state.get(stackKey).find((value) => value.get('key') === action.key)
                if (hasItem) {
                   return state
