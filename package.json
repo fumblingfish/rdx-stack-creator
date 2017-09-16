@@ -8,6 +8,10 @@
   },
   "author": "Rasmus Holst Andersson",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fumblingfish/rdx-stack-creator.git"
+  },
   "peerDependencies": {
     "immutable": "^3.8.1"
   },
