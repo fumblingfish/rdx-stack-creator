@@ -1,0 +1,19 @@
+{
+  "name": "rdx-stack-creator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Rasmus Holst Andersson",
+  "license": "ISC",
+  "peerDependencies": {
+    "immutable": "^3.8.1"
+  },
+  "devDependencies": {
+    "babel-jest": "^21.0.0",
+    "babel-preset-es2015": "^6.24.1",
+    "jest": "^21.0.1"
+  }
+}
