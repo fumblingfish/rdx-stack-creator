@@ -11,12 +11,14 @@ export const {
    removeByKey,
    removeAll,
    createReducer
-} = initializeStack('MY_STACK', 'items')
+} = initializeStack('MY_STACK', 'stack') // suffix, stackKey
 
-export default createReducer({})
+const stackreducer = createReducer({}) // add initial state
 
-export const listSelector = {
-   getItems: (state) => state.listReducer.get('items')
+export default stackreducer
+
+export const stackSelector = {
+   getItems: (state) => state.stackReducer.get('stack')
 }
 
 ```
